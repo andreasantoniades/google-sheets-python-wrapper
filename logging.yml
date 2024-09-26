@@ -1,0 +1,17 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+  main:
+    datefmt: "%Y-%m-%dT%H:%M:%S"
+    format: '[%(asctime)s.%(msecs)03dZ] [%(levelname)s] [%(module)s] [%(funcName)s] %(message)s'
+handlers:
+  main:
+    formatter: main
+    class: logging.StreamHandler
+    stream: ext://sys.stderr
+loggers:
+  root:
+    level: INFO
+    handlers:
+      - main
+    propagate: no
